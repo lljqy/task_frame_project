@@ -1,0 +1,947 @@
+2021-12-24 16:55:32 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 16:55:32 base.py[line:886] INFO Added job "generate_data" to job store "default"
+2021-12-24 16:55:32 base.py[line:171] INFO Scheduler started
+2021-12-24 16:55:32 base.py[line:120] WARNING Run time of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 15:54:51 CST)" was missed by 0:00:41.761109
+2021-12-24 16:55:32 __init__.py[line:26] INFO The job worked :)
+2021-12-24 16:55:41 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:56:31 CST)" (scheduled at 2021-12-24 16:55:41.023904+08:00)
+2021-12-24 16:56:23 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:56:22 CST)" (scheduled at 2021-12-24 16:56:22.571488+08:00)
+2021-12-24 16:56:32 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:56:31 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 16:57:13 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:57:12 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 16:57:21 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:57:21 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 16:58:02 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:58:02 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 16:58:11 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:58:11 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 16:58:29 base.py[line:144] INFO Job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:56:31 CST)" executed successfully
+2021-12-24 16:58:29 __init__.py[line:26] INFO The job worked :)
+2021-12-24 16:58:51 base.py[line:144] INFO Job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:57:12 CST)" executed successfully
+2021-12-24 16:58:51 __init__.py[line:26] INFO The job worked :)
+2021-12-24 16:58:52 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:59:42 CST)" (scheduled at 2021-12-24 16:58:52.571488+08:00)
+2021-12-24 16:59:01 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 16:59:51 CST)" (scheduled at 2021-12-24 16:59:01.023904+08:00)
+2021-12-24 16:59:17 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:40:52 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:40:52 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:40:55 base.py[line:886] INFO Added job "migrate_data_from_mysql_to_manticore" to job store "default"
+2021-12-24 22:40:55 base.py[line:886] INFO Added job "generate_data" to job store "default"
+2021-12-24 22:40:55 base.py[line:171] INFO Scheduler started
+2021-12-24 22:40:55 base.py[line:120] WARNING Run time of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:41:22 CST)" was missed by 0:00:22.872127
+2021-12-24 22:40:55 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:40:55 base.py[line:120] WARNING Run time of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:41:31 CST)" was missed by 0:00:14.583975
+2021-12-24 22:40:55 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:40:57 base.py[line:123] INFO Running job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:02 CST)" (scheduled at 2021-12-24 22:40:57.180011+08:00)
+2021-12-24 22:40:59 base.py[line:131] ERROR Job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:02 CST)" raised an exception
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\develop\python\schedulers\apps\test_app\tasks.py", line 83, in migrate_data_from_mysql_to_manticore
+    cur.executemany(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 173, in executemany
+    return self._do_execute_many(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "no such local index 'temperature'")
+2021-12-24 22:40:59 __init__.py[line:27] ERROR The job crashed :(
+2021-12-24 22:41:02 base.py[line:123] INFO Running job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:07 CST)" (scheduled at 2021-12-24 22:41:02.180011+08:00)
+2021-12-24 22:41:03 base.py[line:131] ERROR Job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:07 CST)" raised an exception
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\develop\python\schedulers\apps\test_app\tasks.py", line 83, in migrate_data_from_mysql_to_manticore
+    cur.executemany(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 173, in executemany
+    return self._do_execute_many(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "no such local index 'temperature'")
+2021-12-24 22:41:03 __init__.py[line:27] ERROR The job crashed :(
+2021-12-24 22:41:07 base.py[line:123] INFO Running job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:12 CST)" (scheduled at 2021-12-24 22:41:07.180011+08:00)
+2021-12-24 22:41:08 base.py[line:131] ERROR Job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:12 CST)" raised an exception
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\develop\python\schedulers\apps\test_app\tasks.py", line 83, in migrate_data_from_mysql_to_manticore
+    cur.executemany(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 173, in executemany
+    return self._do_execute_many(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "no such local index 'temperature'")
+2021-12-24 22:41:08 __init__.py[line:27] ERROR The job crashed :(
+2021-12-24 22:41:12 base.py[line:123] INFO Running job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:17 CST)" (scheduled at 2021-12-24 22:41:12.180011+08:00)
+2021-12-24 22:41:13 base.py[line:131] ERROR Job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:17 CST)" raised an exception
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\develop\python\schedulers\apps\test_app\tasks.py", line 83, in migrate_data_from_mysql_to_manticore
+    cur.executemany(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 173, in executemany
+    return self._do_execute_many(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "no such local index 'temperature'")
+2021-12-24 22:41:13 __init__.py[line:27] ERROR The job crashed :(
+2021-12-24 22:41:17 base.py[line:123] INFO Running job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:22 CST)" (scheduled at 2021-12-24 22:41:17.180011+08:00)
+2021-12-24 22:41:18 base.py[line:131] ERROR Job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:22 CST)" raised an exception
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\develop\python\schedulers\apps\test_app\tasks.py", line 83, in migrate_data_from_mysql_to_manticore
+    cur.executemany(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 173, in executemany
+    return self._do_execute_many(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "no such local index 'temperature'")
+2021-12-24 22:41:18 __init__.py[line:27] ERROR The job crashed :(
+2021-12-24 22:41:22 base.py[line:123] INFO Running job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:27 CST)" (scheduled at 2021-12-24 22:41:22.180011+08:00)
+2021-12-24 22:41:23 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:41:22 CST)" (scheduled at 2021-12-24 22:41:22.571488+08:00)
+2021-12-24 22:41:23 base.py[line:131] ERROR Job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:27 CST)" raised an exception
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\develop\python\schedulers\apps\test_app\tasks.py", line 83, in migrate_data_from_mysql_to_manticore
+    cur.executemany(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 173, in executemany
+    return self._do_execute_many(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "no such local index 'temperature'")
+2021-12-24 22:41:23 __init__.py[line:27] ERROR The job crashed :(
+2021-12-24 22:41:28 base.py[line:123] INFO Running job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:32 CST)" (scheduled at 2021-12-24 22:41:27.180011+08:00)
+2021-12-24 22:41:31 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:41:31 CST)" (scheduled at 2021-12-24 22:41:31.023904+08:00)
+2021-12-24 22:41:34 base.py[line:981] WARNING Execution of job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:32 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 22:41:39 base.py[line:981] WARNING Execution of job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:37 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 22:42:53 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:42:53 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:42:54 base.py[line:171] INFO Scheduler started
+2021-12-24 22:42:54 base.py[line:120] WARNING Run time of job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:41:37 CST)" was missed by 0:00:02.755475
+2021-12-24 22:42:54 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:42:55 base.py[line:120] WARNING Run time of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:43:22 CST)" was missed by 0:00:22.884616
+2021-12-24 22:42:55 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:42:55 base.py[line:120] WARNING Run time of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:43:02 CST)" was missed by 0:00:42.734253
+2021-12-24 22:42:55 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:42:55 base.py[line:120] WARNING Run time of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:43:11 CST)" was missed by 0:00:34.481548
+2021-12-24 22:42:55 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:42:57 base.py[line:123] INFO Running job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:43:02 CST)" (scheduled at 2021-12-24 22:42:57.180011+08:00)
+2021-12-24 22:42:58 base.py[line:131] ERROR Job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:43:02 CST)" raised an exception
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "F:\develop\python\schedulers\apps\test_app\tasks.py", line 83, in migrate_data_from_mysql_to_manticore
+    cur.executemany(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 173, in executemany
+    return self._do_execute_many(
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 211, in _do_execute_many
+    rows += self.execute(sql + postfix)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "no such local index 'temperature'")
+2021-12-24 22:42:58 __init__.py[line:27] ERROR The job crashed :(
+2021-12-24 22:43:15 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:43:15 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:43:16 base.py[line:171] INFO Scheduler started
+2021-12-24 22:43:16 base.py[line:120] WARNING Run time of job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:43:02 CST)" was missed by 0:00:04.242604
+2021-12-24 22:43:16 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:43:16 base.py[line:120] WARNING Run time of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:43:52 CST)" was missed by 0:00:13.988221
+2021-12-24 22:43:16 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:43:16 base.py[line:120] WARNING Run time of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:44:01 CST)" was missed by 0:00:05.744088
+2021-12-24 22:43:16 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:43:17 base.py[line:203] INFO Scheduler has been shut down
+2021-12-24 22:43:17 base.py[line:171] INFO Scheduler started
+2021-12-24 22:43:22 base.py[line:886] INFO Added job "migrate_data_from_mysql_to_manticore" to job store "default"
+2021-12-24 22:43:48 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:43:48 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:43:48 base.py[line:171] INFO Scheduler started
+2021-12-24 22:43:48 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:43:17 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:43:48 base.py[line:988] ERROR Error submitting job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:43:22 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:43:49 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:43:25 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:43:49 base.py[line:203] INFO Scheduler has been shut down
+2021-12-24 22:43:49 base.py[line:171] INFO Scheduler started
+2021-12-24 22:43:50 base.py[line:886] INFO Added job "migrate_data_from_mysql_to_manticore" to job store "default"
+2021-12-24 22:44:41 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:44:41 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:44:41 base.py[line:171] INFO Scheduler started
+2021-12-24 22:44:41 base.py[line:203] INFO Scheduler has been shut down
+2021-12-24 22:44:41 base.py[line:171] INFO Scheduler started
+2021-12-24 22:44:41 base.py[line:886] INFO Added job "migrate_data_from_mysql_to_manticore" to job store "default"
+2021-12-24 22:44:42 base.py[line:886] INFO Added job "generate_data" to job store "default"
+2021-12-24 22:44:42 base.py[line:171] INFO Scheduler started
+2021-12-24 22:44:46 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:44:46 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:44:51 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:44:51 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:44:56 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:44:56 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:01 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:01 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:06 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:06 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:11 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:11 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:16 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:16 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:21 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:21 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:26 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:26 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:31 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:31 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:31 base.py[line:988] ERROR Error submitting job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:45:31 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:36 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:36 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:41 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:41 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:46 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:46 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:51 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:51 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:45:56 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:45:56 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:01 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:01 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:06 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:06 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:11 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:11 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:16 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:16 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:21 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:21 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:21 base.py[line:988] ERROR Error submitting job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:46:21 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:26 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:26 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:31 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:31 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:36 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:36 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:41 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:41 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:46 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:46 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:51 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:51 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:46:56 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:46:56 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:47:01 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:47:01 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:47:06 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:47:06 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:47:11 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:47:11 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:47:11 base.py[line:988] ERROR Error submitting job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:47:11 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:06 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:48:06 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:48:06 base.py[line:171] INFO Scheduler started
+2021-12-24 22:48:06 base.py[line:203] INFO Scheduler has been shut down
+2021-12-24 22:48:06 base.py[line:171] INFO Scheduler started
+2021-12-24 22:48:07 base.py[line:886] INFO Added job "migrate_data_from_mysql_to_manticore" to job store "default"
+2021-12-24 22:48:07 base.py[line:886] INFO Added job "generate_data" to job store "default"
+2021-12-24 22:48:07 base.py[line:171] INFO Scheduler started
+2021-12-24 22:48:11 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:11 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:16 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:16 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:21 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:21 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:26 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:26 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:31 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:31 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:36 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:36 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:41 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:41 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:46 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:46 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:51 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:51 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:56 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:48:56 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:48:56 base.py[line:988] ERROR Error submitting job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:48:56 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:49:01 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:49:01 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:49:06 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:49:06 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:49:11 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:49:11 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:49:16 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:49:16 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:50:18 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:50:18 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:50:18 base.py[line:886] INFO Added job "migrate_data_from_mysql_to_manticore" to job store "default"
+2021-12-24 22:50:18 base.py[line:171] INFO Scheduler started
+2021-12-24 22:50:18 base.py[line:203] INFO Scheduler has been shut down
+2021-12-24 22:50:18 base.py[line:171] INFO Scheduler started
+2021-12-24 22:50:18 base.py[line:886] INFO Added job "generate_data" to job store "default"
+2021-12-24 22:50:18 base.py[line:171] INFO Scheduler started
+2021-12-24 22:50:23 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:50:23 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:50:28 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:50:28 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:50:33 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:50:33 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:50:38 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:50:38 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:50:43 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:50:43 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:50:48 base.py[line:988] ERROR Error submitting job "migrate_data_from_mysql_to_manticore (trigger: interval[0:00:05], next run at: 2021-12-24 22:50:48 CST)" to executor "default"
+Traceback (most recent call last):
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\schedulers\base.py", line 979, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "F:\develop\python\python_envs\dev\lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+  File "F:\develop\python\python3.10\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2021-12-24 22:51:08 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:51:08 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:51:42 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:51:42 base.py[line:445] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2021-12-24 22:51:42 base.py[line:886] INFO Added job "generate_data" to job store "default"
+2021-12-24 22:51:42 base.py[line:171] INFO Scheduler started
+2021-12-24 22:52:32 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:52:32 CST)" (scheduled at 2021-12-24 22:52:32.542056+08:00)
+2021-12-24 22:53:22 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:53:22 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 22:53:56 base.py[line:144] INFO Job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:53:22 CST)" executed successfully
+2021-12-24 22:53:56 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:54:12 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:55:02 CST)" (scheduled at 2021-12-24 22:54:12.542056+08:00)
+2021-12-24 22:55:03 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:55:02 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 22:55:53 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:55:52 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 22:56:28 base.py[line:144] INFO Job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:55:02 CST)" executed successfully
+2021-12-24 22:56:28 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:56:43 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:57:32 CST)" (scheduled at 2021-12-24 22:56:42.542056+08:00)
+2021-12-24 22:57:33 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:57:32 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 22:58:22 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:58:22 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 22:59:08 base.py[line:144] INFO Job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 22:57:32 CST)" executed successfully
+2021-12-24 22:59:08 __init__.py[line:29] INFO The job worked :)
+2021-12-24 22:59:12 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 23:00:02 CST)" (scheduled at 2021-12-24 22:59:12.542056+08:00)
+2021-12-24 23:00:03 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 23:00:02 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 23:00:53 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 23:00:52 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 23:01:42 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 23:01:42 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 23:02:27 base.py[line:144] INFO Job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 23:00:02 CST)" executed successfully
+2021-12-24 23:02:27 __init__.py[line:29] INFO The job worked :)
+2021-12-24 23:02:33 base.py[line:123] INFO Running job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 23:03:22 CST)" (scheduled at 2021-12-24 23:02:32.542056+08:00)
+2021-12-24 23:03:23 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 23:03:22 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 23:04:13 base.py[line:981] WARNING Execution of job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 23:04:12 CST)" skipped: maximum number of running instances reached (1)
+2021-12-24 23:06:59 base.py[line:144] INFO Job "generate_data (trigger: interval[0:00:50], next run at: 2021-12-24 23:03:22 CST)" executed successfully
+2021-12-24 23:06:59 __init__.py[line:29] INFO The job worked :)
