@@ -8,7 +8,8 @@ DATABASES = {
 }
 
 job_stores = {
-    'default': SQLAlchemyJobStore(url=DATABASES['test_app'])
+    'default': SQLAlchemyJobStore(url=DATABASES['test_app']),
+    'memory': MemoryJobStore(),
 }
 
 scheduler = BlockingScheduler(
