@@ -21,16 +21,11 @@ def main():
     # 读取任务
     for app in config.INSTALL_APPS:
         importlib.import_module(app + '.tasks')
-    # 启动任务
-    # config.background_scheduler.start()
-    # config.background_scheduler.shutdown()
-    # config.asyncio_scheduler.start()
-    # config.asyncio_scheduler.shutdown()
-    print("开始启动")
+    # 启动任务（顺序启动后台任务, 协程任务，阻塞任务）
+    config.background_scheduler.start()
+    config.asyncio_scheduler.start()
     config.scheduler.start()
-    print("启动成功")
 
 
 if __name__ == '__main__':
     main()
-    print("开始了")
