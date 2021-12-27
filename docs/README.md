@@ -9,7 +9,7 @@
    2. 在test_app中创建模型文件models.py, 业务代码文件tasks.py
    3. models.py中的模型要继承自定义模型BaseModel，如下图：
       ![img_2.png](img_2.png)
-   4. tasks.py的头部一定要导入全局scheduler对象, 尾部自定义执行模式和执行周期，如下图:
+   4. tasks.py中根据业务场景需求，选择合适的调度器，用装饰器“scheduled_job”并设置相关定时参数，如下图:
       ![img_3.png](img_3.png)
 
 三.本地调试
