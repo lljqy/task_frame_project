@@ -30,8 +30,7 @@ def get_temp():
     return randint(0, 31), randint(31, 66), randint(66, 101)
 
 
-@settings.background_scheduler.scheduled_job("interval", seconds=50, misfire_grace_time=600,
-                                             id="test_app__generate_data")
+@settings.background_scheduler.scheduled_job("interval", seconds=50, misfire_grace_time=600,id="test_app__generate_data")
 def generate_data():
     from datetime import datetime
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 开始生成数据")
@@ -59,38 +58,6 @@ def generate_data():
     session.commit()
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 成功生成数据")
 
-
-# @settings.background_scheduler.scheduled_job('interval', seconds=5)
-# def migrate_data_from_mysql_to_manticore():
-#     model = models.Temperature
-#     OFFSET = 5000
-#     pk = 0
-#     columns = ['id', 'barcode', 'country', 'country_en', 'content', 'data_date', 'temp_max', 'temp_min', 'temp_avg']
-#     while True:
-#         rows = model.objects().filter(model.id > pk).order_by(model.id).limit(OFFSET).all()
-#         if not rows:
-#             break
-#         res = []
-#         for row in rows:
-#             res.append(row.to_tuple())
-#         import pymysql
-#         conn = pymysql.connect(
-#             user='root',  # The first four arguments is based on DB-API 2.0 recommendation.
-#             password=" ",
-#             host='127.0.0.1',
-#             database=' ',
-#             port=9306,
-#             charset="utf8",
-#         )
-#         with conn.cursor() as cur:
-#             cur.executemany(
-#                 f"INSERT INTO temperature({','.join(columns)}) VALUES({','.join(['%s'] * len(columns))})",
-#                 res
-#             )
-#         conn.commit()
-#         conn.close()
-#         pk = rows[-1][0]
-#         print(f"id小于{pk}的同步完成")
 
 @settings.scheduler.scheduled_job('interval', seconds=60, misfire_grace_time=600)
 def test_task():

@@ -12,7 +12,7 @@ Base = declarative_base()
 
 class BaseModel(Base):
     __abstract__ = True
-    app_name = None
+    app_name = 'default'
 
     @classmethod
     def session(cls):
@@ -24,15 +24,11 @@ class BaseModel(Base):
 
     @classmethod
     def get_db_session(cls):
-        if cls.app_name is None:
-            raise ValueError('子类模型必须指定`app_name`')
         engine = create_engine(settings.convert_db_conf_to_url(DATABASES.get(cls.app_name)))
         return sessionmaker(bind=engine)()
 
     @classmethod
     def get_conn(cls):
-        if cls.app_name is None:
-            raise ValueError('子类模型必须指定`app_name`')
         db_config = DATABASES[cls.app_name]
         return pymysql.connect(
             user=db_config['USER'],
