@@ -1,5 +1,6 @@
 import os
 import logging
+from urllib.parse import quote_plus
 
 from apscheduler.executors.pool import ThreadPoolExecutor
 from apscheduler.executors.pool import ProcessPoolExecutor
@@ -19,26 +20,37 @@ logging.basicConfig(
     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S',
     filename=os.path.join(PATH, 'logs', 'apscheduler_task.log'),
-    filemode='a'
+    filemode='a',
+    encoding='utf-8',
 )
 
 
 def job_exception_listener(event):
+    scheduled_run_time = event.scheduled_run_time.strftime("%Y-%m-%d %H:%M:%S")
     if event.exception:
         # todo：异常处理, 告警等
-        logger.error('The job crashed :(')
+        logger.error(f'调度任务({event.job_id})在{scheduled_run_time}时刻失败 :(, 原因是：{event.exception}')
     else:
-        logger.info('The job worked :)')
+        logger.info(f'调度任务({event.job_id})在{scheduled_run_time}时刻成功运行 :)')
+
+
+def convert_db_conf_to_url(db_conf):
+    """
+    将django类似的配置文件转化为sqlalchemy链接数据库的url
+    :param db_conf:
+    :return:
+    """
+    return f"{db_conf['ENGINE']}://{db_conf['USER']}:{quote_plus(db_conf['PASSWORD'])}@{db_conf['HOST']}:{db_conf['PORT']}/{db_conf['NAME']}"
 
 
 executors = {
-    'default': ThreadPoolExecutor(20),
-    'process_pool': ProcessPoolExecutor(5),
+    'default': ThreadPoolExecutor(30),
+    'processpool': ProcessPoolExecutor(5),
 }
 
 job_defaults = {
-    'coalesce': False,
-    'max_instance': 2
+    'coalesce': True,
+    'max_instance': 2,
 }
 
 INSTALL_APPS = (

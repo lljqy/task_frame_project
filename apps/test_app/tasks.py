@@ -30,14 +30,15 @@ def get_temp():
     return randint(0, 31), randint(31, 66), randint(66, 101)
 
 
-@settings.scheduler.scheduled_job("interval", seconds=50, id="test_app__generate_data")
+@settings.background_scheduler.scheduled_job("interval", seconds=50, misfire_grace_time=600,
+                                             id="test_app__generate_data")
 def generate_data():
     from datetime import datetime
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 开始生成数据")
     model = models.Temperature
     session = model.session()
     objs = []
-    for _ in range(int(10e4)):
+    for _ in range(int(10e2)):
         barcode = get_barcode()
         country_en, country = get_country()
         data_date = get_data_date()
@@ -91,16 +92,16 @@ def generate_data():
 #         pk = rows[-1][0]
 #         print(f"id小于{pk}的同步完成")
 
-@settings.scheduler.scheduled_job('interval', seconds=1)
+@settings.scheduler.scheduled_job('interval', seconds=60, misfire_grace_time=600)
 def test_task():
     print("运行了任务1")
 
 
-@settings.background_scheduler.scheduled_job('interval', seconds=1)
+@settings.background_scheduler.scheduled_job('interval', seconds=60, misfire_grace_time=600)
 def test_task1():
     print("运行了任务2")
 
 
-@settings.background_scheduler.scheduled_job('interval', seconds=1)
+@settings.background_scheduler.scheduled_job('interval', seconds=60, misfire_grace_time=600)
 def test_task2():
     print("运行了任务3")

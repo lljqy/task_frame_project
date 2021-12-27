@@ -7,7 +7,7 @@ DATABASES = {
 }
 
 job_stores = {
-    'default': SQLAlchemyJobStore(url=DATABASES['test_app']),
+    'default': SQLAlchemyJobStore(url=convert_db_conf_to_url(DATABASES['test_app'])),
     'memory': MemoryJobStore(),
 }
 

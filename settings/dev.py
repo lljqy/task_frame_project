@@ -1,14 +1,29 @@
 from settings import *
 
+
 DEBUG = True
 
 DATABASES = {
-    "test_app": "mysql+pymysql://root:123456@localhost:3306/scheduler",
-    "test_manticore": "mysql+pymysql://root:123456@localhost:9306/ ",
+    "test_app": {
+        "ENGINE": "mysql+pymysql",
+        "USER": "root",
+        "PASSWORD": "123456",
+        "HOST": "localhost",
+        "PORT": 3306,
+        "NAME": "scheduler",
+    },
+    "test_manticore": {
+        "ENGINE": "mysql+pymysql",
+        "USER": "root",
+        "PASSWORD": "123456",
+        "HOST": "localhost",
+        "PORT": 9306,
+        "NAME": " ",
+    },
 }
 
 job_stores = {
-    'default': SQLAlchemyJobStore(url=DATABASES['test_app']),
+    'default': SQLAlchemyJobStore(url=convert_db_conf_to_url(DATABASES['test_app'])),
     'memory': MemoryJobStore(),
 }
 
