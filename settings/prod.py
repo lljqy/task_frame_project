@@ -3,7 +3,14 @@ from settings import *
 DEBUG = False
 
 DATABASES = {
-    "test_app": "mysql+pymysql://root:123456@localhost:3306/scheduler",
+    "test_app": {
+        "ENGINE": "mysql+pymysql",
+        "USER": "root",
+        "PASSWORD": "123456",
+        "HOST": "localhost",
+        "PORT": 3306,
+        "NAME": "scheduler",
+    },
 }
 
 job_stores = {
