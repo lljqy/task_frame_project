@@ -1,9 +1,16 @@
 from settings import *
 
-
 DEBUG = True
 
 DATABASES = {
+    "default": {
+        "ENGINE": "mysql+pymysql",
+        "USER": "root",
+        "PASSWORD": "123456",
+        "HOST": "localhost",
+        "PORT": 3306,
+        "NAME": "scheduler",
+    },
     "test_app": {
         "ENGINE": "mysql+pymysql",
         "USER": "root",
