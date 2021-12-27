@@ -1,3 +1,4 @@
+import pymysql
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -24,9 +25,22 @@ class BaseModel(Base):
     @classmethod
     def get_db_session(cls):
         if cls.app_name is None:
-            raise NotImplementedError('子类模型必须指定`app_name`')
-        engine = create_engine(DATABASES.get(cls.app_name))
+            raise ValueError('子类模型必须指定`app_name`')
+        engine = create_engine(settings.convert_db_conf_to_url(DATABASES.get(cls.app_name)))
         return sessionmaker(bind=engine)()
+
+    @classmethod
+    def get_conn(cls):
+        if cls.app_name is None:
+            raise ValueError('子类模型必须指定`app_name`')
+        db_config = DATABASES[cls.app_name]
+        return pymysql.connect(
+            user=db_config['USER'],
+            password=db_config['PASSWORD'],
+            host=db_config['HOST'],
+            database=db_config['NAME'],
+            port=db_config['PORT'],
+        )
 
     def to_json(self, *args):
         dict_ = self.__dict__

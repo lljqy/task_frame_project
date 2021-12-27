@@ -3,11 +3,18 @@ from settings import *
 DEBUG = False
 
 DATABASES = {
-    "test_app": "mysql+pymysql://root:123456@localhost:3306/scheduler",
+    "test_app": {
+        "ENGINE": "mysql+pymysql",
+        "USER": "root",
+        "PASSWORD": "123456",
+        "HOST": "localhost",
+        "PORT": 3306,
+        "NAME": "scheduler",
+    },
 }
 
 job_stores = {
-    'default': SQLAlchemyJobStore(url=DATABASES['test_app']),
+    'default': SQLAlchemyJobStore(url=convert_db_conf_to_url(DATABASES['test_app'])),
     'memory': MemoryJobStore(),
 }
 
