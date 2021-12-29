@@ -10,7 +10,7 @@ warnings.filterwarnings('ignore')
 os.environ.setdefault("GLOBAL_SETTINGS", "settings.dev")
 
 
-def main():
+def start_scheduler():
     # 将项目加载到python包搜索路径中
     BASE_PATH = os.path.dirname(__file__)
     sys.path.append(BASE_PATH)
@@ -25,6 +25,26 @@ def main():
     config.background_scheduler.start()
     config.asyncio_scheduler.start()
     config.scheduler.start()
+
+
+def main():
+    if not sys.platform.startswith("win32"):
+        import atexit
+        import fcntl
+        f = open("scheduler.lock", "wb")
+        try:
+            fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            start_scheduler()
+        except:
+            pass
+
+        def unlock():
+            fcntl.flock(f, fcntl.LOCK_UN)
+            f.close()
+
+        atexit.register(unlock())
+    else:
+        start_scheduler()
 
 
 if __name__ == '__main__':
